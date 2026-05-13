@@ -1,0 +1,6 @@
+var x = 21;
+var y = 10x + 32;
+
+console(y + x * 21);
+
+// expected result is: y = 241, prints 682
