@@ -6,6 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-    Scanner scan(handleFileNameEntry(argc, argv));
+    std::string raw_data = handleFileNameEntry(argc, argv);
+    Scanner scan(raw_data);
     return 0;
 }

@@ -44,6 +44,6 @@ inline std::string getErrorMessage(std::string value)
 }
 
 // this handles all the file name entry
-std::filesystem::path handleFileNameEntry(int argc, char *argv[]);
+std::string handleFileNameEntry(int argc, char *argv[]);
 
 #endif

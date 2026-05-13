@@ -4,7 +4,7 @@
 #include <sstream>
 #include <string>
 
-std::filesystem::path handleFileNameEntry(int argc, char *argv[])
+std::string handleFileNameEntry(int argc, char *argv[])
 {
     if (argc < 2)
     {
@@ -22,7 +22,8 @@ std::filesystem::path handleFileNameEntry(int argc, char *argv[])
 
             std::ostringstream ss;
             ss << file.rdbuf();
-            return ss.str();
+            std::string val = ss.str();
+            return val;
         }
         else
         {

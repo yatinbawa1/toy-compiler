@@ -4,15 +4,17 @@
 
 // this function will return a Scanned Tokenized vector
 // of the whole text
-Scanner::Scanner(std::string raw_data)
-{
-    for (; cursor < raw_data.length(); cursor++)
-    {
-        if (raw_data[cursor] == '\n')
-        {
-            Scanner::line_number++;
-        }
 
-        std::cout << raw_data[cursor];
-    }
+char Scanner::peek()
+{
+    return raw_data[cursor + 1];
+}
+
+void Scanner::scanToken()
+{
+}
+
+Scanner::Scanner(std::string &raw_data) : raw_data(raw_data), cursor(0)
+{
+    scanToken();
 }

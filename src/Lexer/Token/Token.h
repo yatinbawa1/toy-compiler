@@ -3,6 +3,7 @@
 
 #include <string>
 #include <any>
+#include <map>
 #include "./TokenType.h"
 
 typedef struct Token
@@ -13,15 +14,23 @@ typedef struct Token
     unsigned int line;   // would store the line number
 } Token;
 
+static const std::unordered_map<std::string, TokenType> keyword_dictionary = {
+    {"var", TokenType::VAR},
+    {"print", TokenType::PRINT},
+};
+
 class Scanner
 {
 
-    unsigned int cursor = 0;
     std::vector<Token> tokens;
+    std::string &raw_data;
     unsigned int line_number = 1;
+    unsigned int cursor = 0;
 
 public:
-    Scanner(std::string raw_data);
+    Scanner(std::string &raw_data);
+    void scanToken();
+    char peek();
 };
 
 #endif
