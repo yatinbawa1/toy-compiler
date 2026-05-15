@@ -2,7 +2,7 @@
 #include <string>
 #include <filesystem>
 #include "./Util/Util.h"
-#include "./Lexer/Token/Token.h"
+#include "./Lexer/Scanner/Scanner.h"
 
 int main(int argc, char *argv[])
 {

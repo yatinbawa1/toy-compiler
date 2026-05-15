@@ -19,18 +19,11 @@ static const std::unordered_map<std::string, TokenType> keyword_dictionary = {
     {"print", TokenType::PRINT},
 };
 
-class Scanner
-{
-
-    std::vector<Token> tokens;
-    std::string &raw_data;
-    unsigned int line_number = 1;
-    unsigned int cursor = 0;
-
-public:
-    Scanner(std::string &raw_data);
-    void scanToken();
-    char peek();
-};
-
+// Due to return value optimization this will be created straight where
+// memory needs to be rather than a extra copy, this will result in a virtually non existent
+// delay, and make the syntax cleaner
+Token generateToken(TokenType tokenType,
+                    std::string lexeme,
+                    std::any literal,
+                    unsigned int line);
 #endif

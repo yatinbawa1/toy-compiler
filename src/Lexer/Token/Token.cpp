@@ -2,19 +2,10 @@
 #include <iostream>
 #include "Token.h"
 
-// this function will return a Scanned Tokenized vector
-// of the whole text
-
-char Scanner::peek()
+Token generateToken(TokenType tokenType, // would store the type of token
+                    std::string lexeme,  // would store how it looks as a string
+                    std::any literal,    // would store the actual value
+                    unsigned int line)
 {
-    return raw_data[cursor + 1];
-}
-
-void Scanner::scanToken()
-{
-}
-
-Scanner::Scanner(std::string &raw_data) : raw_data(raw_data), cursor(0)
-{
-    scanToken();
+    return {tokenType, lexeme, literal, line};
 }
